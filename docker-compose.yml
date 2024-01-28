@@ -1,0 +1,15 @@
+version: "3"
+services:
+  docker-antdv-pro:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: docker-antdv-pro
+    user: root
+    privileged: true
+    ports:
+      - "63102:6678"
+    volumes:
+      - ./prod:/prod
+    restart: always
+    tty: true
